@@ -1,5 +1,5 @@
 import sys # provides functions and variables that are used to manipulate different parts of the python runtime environmment
-import logging
+from src.logger import logging
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info() # exc_tb will store info like on which file exception has occured , on which line exception has occured  
     file_name = exc_tb.tb_frame.f_code.co_filename # custom exception handling (read from google if necessary)
@@ -16,4 +16,3 @@ class CustomException(Exception):
         
     def __str__(self):
         return self.error_message
-    
